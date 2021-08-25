@@ -16,7 +16,7 @@ class BatimentController extends Controller
         $table = new Batiment;
 
         $table->name = $request->name;
-        $table->description = $request->description;
+        $table->age = $request->age;
         $table->save();
 
         return redirect('/batiment');
@@ -31,12 +31,12 @@ class BatimentController extends Controller
 
     public function show($id) {
         $batiment = Batiment::find($id);
-        return view('crud.show', compact('batiment'));
+        return view('crud.showbatiment', compact('batiment'));
     }
 
     public function edit($id) {
         $batiment = Batiment::find($id);
-        return view('crud.update', compact('batiment'));
+        return view('crud.updatebatiment', compact('batiment'));
     }
 
     public function update($id, Request $request) {
@@ -46,6 +46,6 @@ class BatimentController extends Controller
         $batiment->description = $request->description;
         $batiment->save();
 
-        return redirect()->back();
+        return redirect('/batiment');
     }
 }

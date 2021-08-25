@@ -4,7 +4,7 @@
 
     <div class="container">
 
-        <form action="/crud/update/{{$batiment->id}}" method="post">
+        <form action="/crud/updatebatiment/{{$batiment->id}}" method="post">
         @csrf
         @method("PUT")
 
@@ -12,7 +12,7 @@
             <input type="text" name="name" id="" value="{{$batiment->name}}">
                 <br>
             <label class="mt-2 mb-2" for="">Description :</label>
-            <input type="text" name="description" id="" value="{{$batiment->quantity}}">
+            <input type="text" name="description" id="" value="{{$batiment->description}}">
                 <br>
             <button class="mt-2 mb-2" type="submit">Update</button>
 

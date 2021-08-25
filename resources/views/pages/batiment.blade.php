@@ -36,7 +36,7 @@
                         <button><a href="/crud/show/{{$item->id}}">Show</a></button>
                     </td>
                     <td>
-                        <button><a href="/crud/edit/{{$item->id}}">Update</a></button>
+                        <button><a href="/crud/editbatiment/{{$item->id}}">Update</a></button>
                     </td>
                 </tr>
 

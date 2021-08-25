@@ -27,12 +27,22 @@ Route::get('/typeformatio', [TypeformationController::class, 'index'])->name('ty
 // ----------  Ajout  --------------
 Route::post('/batiment', [BatimentController::class, 'store']);
 
+Route::post('/eleve', [EleveController::class, 'store']);
+
 // ----------  Suppression  --------------
 Route::post('/batiment/{id}', [BatimentController::class, 'destroy']);
 
+Route::post('/eleve/{id}', [EleveController::class, 'destroy']);
+
+
 // ----------  Show  --------------
-Route::get('/crud/show/{id}', [BatimentController::class, 'show']);
+Route::get('/crud/showbatiment/{id}', [BatimentController::class, 'show']);
+
+Route::get('/crud/showeleve/{id}', [EleveController::class, 'show']);
 
 // ----------  Update  --------------
-Route::get('/crud/edit/{id}', [BatimentController::class, 'edit']);
-Route::put('/crud/update/{id}', [BatimentController::class, 'update']);
+Route::get('/crud/editbatiment/{id}', [BatimentController::class, 'edit']);
+Route::put('/crud/updatebatiment/{id}', [BatimentController::class, 'update']);
+
+Route::get('/crud/editeleve/{id}', [EleveController::class, 'edit']);
+Route::put('/crud/updateeleve/{id}', [EleveController::class, 'update']);
