@@ -33,7 +33,7 @@
                         </form>
                     </td>
                     <td>
-                        <button><a href="/crud/show/{{$item->id}}">Show</a></button>
+                        <button><a href="/crud/showbatiment/{{$item->id}}">Show</a></button>
                     </td>
                     <td>
                         <button><a href="/crud/editbatiment/{{$item->id}}">Update</a></button>

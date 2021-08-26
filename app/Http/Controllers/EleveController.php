@@ -21,7 +21,7 @@ class EleveController extends Controller
         $table->age = $request->age;
         $table->save();
 
-        return redirect('/eleve');
+        return redirect()->back();
     }
 
     public function destroy($id) {
@@ -48,6 +48,6 @@ class EleveController extends Controller
         $eleve->age = $request->age;
         $eleve->save();
 
-        return redirect('/eleve');
+        return redirect('/eleves');
     }
 }

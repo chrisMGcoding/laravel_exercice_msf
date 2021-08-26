@@ -16,7 +16,7 @@ class BatimentController extends Controller
         $table = new Batiment;
 
         $table->name = $request->name;
-        $table->age = $request->age;
+        $table->description = $request->description;
         $table->save();
 
         return redirect('/batiment');

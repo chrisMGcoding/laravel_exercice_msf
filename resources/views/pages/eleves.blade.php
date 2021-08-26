@@ -53,19 +53,19 @@
         <form action="/eleve" method="post">
         @csrf
 
-        <label class="mt-2 mb-2" for="">Nom élève :</label>
-        <input type="text" name="name" id="">
+            <label class="mt-2 mb-2" for="">Nom élève :</label>
+            <input type="text" name="name" id="">
+                    <br>
+            <label class="mt-2 mb-2" for="">Age :</label>
+            <input type="text" name="age" id="">
+                    <br>
+            <label class="mt-2 mb-2" for="">Etat :</label>
+            <input type="text" name="etat" id="">
+                    
+            <label class="mt-2 mb-2" for="">Prénom élève :</label>
+            <input type="text" name="firstName" id="">
                 <br>
-        <label class="mt-2 mb-2" for="">Age :</label>
-        <input type="text" name="age" id="">
-                <br>
-        <label class="mt-2 mb-2" for="">Etat :</label>
-        <input type="text" name="etat" id="">
-                
-        <label class="mt-2 mb-2" for="">Prénom élève :</label>
-        <input type="text" name="firstName" id="">
-            <br>
-        <button class="mt-2 mb-2" type="submit">Ajouter</button>
+            <button class="mt-2 mb-2" type="submit">Ajouter</button>
     
         </form>
 
