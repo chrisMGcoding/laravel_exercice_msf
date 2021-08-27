@@ -13,6 +13,11 @@ class FormationController extends Controller
     }
 
     public function store(Request $request) {
+        request()->validate([
+            "name"=>["required", "min:1", "max:30"],
+            "description"=>["required", "min:1", "max:30"]
+        ]);
+
         $table = new Formation;
 
         $table->name = $request->name;
@@ -40,6 +45,11 @@ class FormationController extends Controller
     }
 
     public function update($id, Request $request) {
+        request()->validate([
+            "name"=>["required", "min:1", "max:30"],
+            "description"=>["required", "min:1", "max:30"]
+        ]);
+
         $formation = Formation::find($id);
 
         $formation->name = $request->name;

@@ -50,17 +50,27 @@
 
         <h3 class="mt-2 mb-2">Ajout d'un nouveau bâtiment :</h3>
 
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <form action="/batiment" method="post">
         @csrf
 
-        <label class="mt-2 mb-2" for="">Nom bâtiment :</label>
-        <input type="text" name="name" id="">
-                <br>
-        <label class="mt-2 mb-2" for="">Description :</label>
-        <input type="text" name="description" id="">
-                <br>
-        <button class="mt-2 mb-2" type="submit">Ajouter</button>
-    
+            <label class="mt-2 mb-2" for="">Nom bâtiment :</label>
+            <input type="text" name="name" id="" value="{{old('name')}}">
+                    <br>
+            <label class="mt-2 mb-2" for="">Description :</label>
+            <input type="text" name="description" id="" value="{{old('description')}}">
+                    <br>
+            <button class="mt-2 mb-2" type="submit">Ajouter</button>
+        
         </form>
 
     </div>

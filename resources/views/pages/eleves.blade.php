@@ -50,20 +50,30 @@
 
         <h3 class="mt-2 mb-2">Ajout d'un nouvel élève :</h3>
 
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <form action="/eleve" method="post">
         @csrf
 
             <label class="mt-2 mb-2" for="">Nom élève :</label>
-            <input type="text" name="name" id="">
+            <input type="text" name="name" id="" value="{{old('name')}}">
                     <br>
             <label class="mt-2 mb-2" for="">Age :</label>
-            <input type="text" name="age" id="">
+            <input type="text" name="age" id="" value="{{old('age')}}">
                     <br>
             <label class="mt-2 mb-2" for="">Etat :</label>
-            <input type="text" name="etat" id="">
+            <input type="text" name="etat" id="" value="{{old('etat')}}">
                     
             <label class="mt-2 mb-2" for="">Prénom élève :</label>
-            <input type="text" name="firstName" id="">
+            <input type="text" name="firstName" id="" value="{{old('firstName')}}">
                 <br>
             <button class="mt-2 mb-2" type="submit">Ajouter</button>
     

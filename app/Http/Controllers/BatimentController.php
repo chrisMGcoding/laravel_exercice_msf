@@ -13,6 +13,11 @@ class BatimentController extends Controller
     }
 
     public function store(Request $request) {
+        request()->validate([
+            "name"=>["required", "min:1", "max:30"],
+            "description"=>["required", "min:1", "max:30"]
+        ]);
+
         $table = new Batiment;
 
         $table->name = $request->name;
@@ -40,6 +45,11 @@ class BatimentController extends Controller
     }
 
     public function update($id, Request $request) {
+        request()->validate([
+            "name"=>["required", "min:1", "max:30"],
+            "description"=>["required", "min:1", "max:30"]
+        ]);
+
         $batiment = Batiment::find($id);
 
         $batiment->name = $request->name;

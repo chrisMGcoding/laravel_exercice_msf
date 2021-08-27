@@ -50,14 +50,26 @@
 
         <h3 class="mt-2 mb-2">Ajout d'une nouvelle typeformation :</h3>
 
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <form action="/typeformation" method="post">
         @csrf
 
             <label class="mt-2 mb-2" for="">Nom type formation :</label>
-            <input type="text" name="name" id="">
+            <input type="text" name="name" id="" value="{{old('name')}}">
                     <br>
             <button class="mt-2 mb-2" type="submit">Ajouter</button>
     
         </form>
 
     </div>
+
+@endsection

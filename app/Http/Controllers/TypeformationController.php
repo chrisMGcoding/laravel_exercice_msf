@@ -13,6 +13,10 @@ class TypeformationController extends Controller
     }
 
     public function store(Request $request) {
+        request()->validate([
+            "name"=>["required", "min:1", "max:30"]
+        ]);
+
         $table = new Typeformation;
 
         $table->name = $request->name;
@@ -39,11 +43,15 @@ class TypeformationController extends Controller
     }
 
     public function update($id, Request $request) {
+        request()->validate([
+            "name"=>["required", "min:1", "max:30"]
+        ]);
+
         $typeformation = Typeformation::find($id);
 
         $typeformation->name = $request->name;
         $typeformation->save();
 
-        return redirect('/typeformations');
+        return redirect('/typeformation');
     }
 }

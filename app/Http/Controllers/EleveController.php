@@ -13,6 +13,13 @@ class EleveController extends Controller
     }
 
     public function store(Request $request) {
+        request()->validate([
+            "name"=>["required", "min:1", "max:30"],
+            "firstname"=>["required", 'min:1', "max:30"],
+            "etat"=>["required", "min:1", "max:30"],
+            "age"=>["required", "numeric"]
+        ]);
+
         $table = new Eleve;
 
         $table->name = $request->name;
@@ -42,6 +49,13 @@ class EleveController extends Controller
     }
 
     public function update($id, Request $request) {
+        request()->validate([
+            "name"=>["required", "min:1", "max:30"],
+            "firstname"=>["required", 'min:1', "max:30"],
+            "etat"=>["required", "min:1", "max:30"],
+            "age"=>["required", "numeric"]
+        ]);
+
         $eleve = Eleve::find($id);
 
         $eleve->name = $request->name;
